@@ -1,0 +1,12 @@
+*.tar.gz
+*.tgz
+*.ipk
+*.apk
+*.log
+*.bak
+*.backup
+*settings*.tar*
+.env
+.env.*
+secrets/
+backups/
