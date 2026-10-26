@@ -1,0 +1,18 @@
+name: Shell checks
+on:
+  push:
+    branches: [main, "feat/**"]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  shell:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: ShellCheck
+        run: shellcheck --shell=sh scripts/*.sh tests/*.sh
+      - name: Syntax and safe off-target smoke tests
+        run: sh tests/smoke.sh
